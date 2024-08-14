@@ -1,3 +1,4 @@
 langchain-core
 langchain-huggingface
+numpy<2
 python-dotenv
