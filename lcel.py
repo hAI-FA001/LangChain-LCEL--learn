@@ -3,13 +3,14 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.messages import HumanMessage
 from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace
 
+import os
 from dotenv import load_dotenv
 
 
 load_dotenv()
 
 if __name__ == "__main__":
-    model_repo = "microsoft/Phi-3-mini-4k-instruct"
+    model_repo = os.environ["MODEL_REPO"]
     prompt_content = "Tell me a joke aboue {topic}. Be brief and concise."
     topic = "ice cream"
 

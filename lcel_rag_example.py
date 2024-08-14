@@ -3,8 +3,14 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace
 from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 
+import os
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
 if __name__ == "__main__":
-    model_repo = "microsoft/Phi-3-mini-4k-instruct"
+    model_repo = os.environ["MODEL_REPO"]
     prompt_content = "{context}" + \
     "\nTell me about {topic}. Be brief and concise."
     topic = "ice cream"
